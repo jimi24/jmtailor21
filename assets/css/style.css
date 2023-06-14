@@ -1,0 +1,519 @@
+/* @font-face {
+  font-family: rolled;
+  src: url(fonts/Raleway-Thin.ttf);
+} */
+
+@import "grid.css";
+
+body {
+  font-family: jm;
+}
+
+:root {
+  --primary: #ffffff;
+  --bg: rgb(255, 255, 255);
+}
+
+@font-face {
+  font-family: jm;
+  src: url(fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: cinzel;
+  src: url(fonts/Cinzel_Decorative/CinzelDecorative-Black.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: jm;
+  background-color: var(--bg);
+  color: rgb(29, 28, 28);
+  width: 100%;
+  height: 10rem;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 10%;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .logo img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  margin-left: 20px;
+  margin-right: 16px;
+  margin-top: 15px;
+  padding-right: 10px;
+}
+
+.navbar .navbar-nav a {
+  color: black;
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: grey;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid grey;
+  transform: scaleX(0);
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-extra a {
+  color: rgb(0, 0, 0);
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: grey;
+}
+
+#produk-menu {
+  display: none;
+}
+
+/* landing section */
+.landing {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("img/img 1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  padding: 200px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.landing::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgb(255, 255, 255, 1) 4%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.landing .content {
+  padding: 2rem 7%;
+  max-width: 60rem;
+}
+
+.landing .content h1 {
+  font-size: 6em;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+  line-height: 1.2;
+  z-index: 1;
+  padding: 20px 25px;
+  border: solid 3px;
+}
+
+.landing .content p {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  line-height: 1.2rem;
+  font-weight: 100;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+  mix-blend-mode: difference;
+}
+
+.landing .content .cta {
+  margin-top: 1.4rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #ffffff;
+  background-color: grey;
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+}
+
+.landing .content .cta:hover {
+  color: #0a0a0a;
+  background-color: rgb(255, 255, 255);
+}
+
+/* section tentang */
+.tentang {
+  padding: 8rem 0 10% 1.8rem;
+  border-bottom: 1px solid rgb(199, 198, 198);
+}
+
+.tentang h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: rgba(128, 128, 128, 0.2);
+}
+
+.tentang h2 span {
+  color: grey;
+}
+
+.tentang .row {
+  display: flex;
+}
+
+.tentang .row .tentang-img {
+  flex: 1 1 45rem;
+}
+
+.tentang .row .tentang-img img {
+  width: 100%;
+}
+
+.tentang .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.tentang .row .content h3 {
+  font-family: cinzel;
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.tentang .row .content p {
+  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  line-height: 1.6rem;
+}
+
+.tentang .row .content .ctn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: grey;
+  border-radius: 0.5rem;
+}
+
+.tentang .row .content .ctn:hover {
+  color: black;
+  background-color: white;
+}
+
+/* section layanan */
+.layanan {
+  padding: 10rem 7% 1.4rem;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid rgb(199, 198, 198);
+  background-color: white;
+}
+
+.layanan h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  padding: 0px 0px;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: rgba(128, 128, 128, 0.2);
+}
+
+.layanan h2 span {
+  color: grey;
+}
+
+.layanan h3 {
+  font-family: cinzel;
+}
+
+.layanan .row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.layanan .row .layanan-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.layanan .row .layanan-card img {
+  width: 80%;
+  border: 1px black solid;
+}
+.layanan .row .layanan-card .layanan-card-judul {
+  margin: 1.5rem auto 1rem;
+  font-size: 20px;
+}
+
+.layanan .row .layanan-card .ctn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: grey;
+  border-radius: 0.5rem;
+}
+
+.layanan .row .layanan-card .ctn:hover {
+  color: black;
+  background-color: white;
+}
+
+/* Produk */
+.produk {
+  position: relative;
+  /* border-bottom: 1px solid rgb(199, 198, 198); */
+  background-color: white;
+  padding: 8rem 0 10% 1rem;
+}
+
+.produk h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  padding: 30px 0px;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: rgba(128, 128, 128, 0.2);
+}
+
+.produk h2 span {
+  color: grey;
+}
+
+.produk h3 {
+  font-family: cinzel;
+  font-size: 2px;
+}
+
+.produk .row {
+  display: flex;
+  margin: 10px;
+  padding: 20px;
+}
+
+.produk .row .produk-card {
+  text-align: center;
+  padding-bottom: 3rem;
+}
+
+.produk .row .produk-card img {
+  border-radius: 10%;
+  width: 90%;
+  border: 1px black solid;
+}
+.produk .row .produk-card .produk-card-judul {
+  margin: 1rem auto 0.5rem;
+  font-size: 20px;
+}
+
+/* section kontak */
+.kontak {
+  padding: 0 0;
+  background-color: #ffffff;
+}
+
+.kontak h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-color: rgba(128, 128, 128, 0.2);
+}
+
+.kontak h2 span {
+  color: grey;
+}
+
+.kontak img {
+  display: block;
+  margin: 0 auto;
+  width: 10%;
+}
+
+.kontak p {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+
+.medsos {
+  text-align: center;
+}
+
+.medsos img {
+  display: inline;
+  margin: 10px;
+  width: 25px;
+}
+
+.medsos img:hover {
+  filter: invert(81%) sepia(9%) saturate(176%) hue-rotate(318deg)
+    brightness(94%) contrast(85%);
+}
+
+/* footer */
+footer {
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+}
+
+footer .links {
+  margin-bottom: 1.2rem;
+}
+
+footer .links a {
+  color: #0a0a0a;
+  padding: 1.7rem 1rem;
+  font-size: 1.4rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 6 00;
+}
+
+footer .links a:hover {
+  color: #bdb9b9;
+}
+
+footer .credit {
+  font-size: 1rem;
+}
+
+footer .credit p,
+.credit a {
+  color: #0a0a0a;
+  font-weight: 700;
+}
+
+/* media queries */
+
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #produk-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    display: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: black;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar.navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .tentang .row {
+    flex-wrap: wrap;
+  }
+
+  .tentang .row .tentang-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .tentang .row .content {
+    padding: 0;
+  }
+
+  .tentang .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .tentang .row .content p {
+    font-size: 1.6rem;
+  }
+}
+
+/* mobile phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
